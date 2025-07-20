@@ -5,6 +5,7 @@
 # @Author: DolphinDB
 # @Last modification time: 2022.09.01
 # @FileName: alpha101_adjusted.py
+# https://arxiv.org/abs/1601.00991
 
 import numpy as np
 import pandas as pd
@@ -728,11 +729,17 @@ class Alphas101(Alphas):
 
 
 if __name__ == '__main__':
-    year = '2013'
-    list_assets,df_asserts = get_hs300_stocks(f'{year}-01-01')
+    # 获取指数数据
+    # download_index_data("000300.SH", True)
+
+    # 获取股票数据
+    # download_all_date_data("bfq")
+
+    year = '2023'
+    list_assets,df_asserts = get_hs300_stocks(f'{year}-05-04')
 
     ################ 计算所有 #################   
-    Alphas101.generate_alphas(year, list_assets,"sh000300")
+    Alphas101.generate_alphas(year, list_assets,"000300.SH")
 
     ################ 计算单个 #################
     # ret = Alphas101.generate_alpha_single('alpha096', year, list_assets, "sh000300", True)

@@ -51,6 +51,7 @@ class Alphas(object):
             df['asset'] = c
             df = df[(df['日期'] >= start_time) & (df['日期'] <= end_time)]
             df = df.merge(bm_data, how='outer', left_on='日期', right_on='benchmark_date')
+
             list_all.append(df)
             
         print(len(list_all))
@@ -78,6 +79,7 @@ class Alphas(object):
         df_all = df_all[['asset','date', "open", "close", "high", "low", "volume", "amount", 'vwap', "pctChg", 'turnover', 'benchmark_open', 'benchmark_close']]
         # ddu = df_all[df_all.duplicated()]
         df_all=df_all[df_all['asset'].notnull()]
+
         return df_all.pivot(index='date', columns='asset') 
     
     @classmethod

@@ -1,3 +1,5 @@
+# https://www.jieyu.ai/assets/ebooks/%E5%9B%BD%E6%B3%B0%E5%90%9B%E5%AE%89%EF%BC%8D%E5%9F%BA%E4%BA%8E%E7%9F%AD%E5%91%A8%E6%9C%9F%E4%BB%B7%E9%87%8F%E7%89%B9%E5%BE%81%E7%9A%84%E5%A4%9A%E5%9B%A0%E5%AD%90%E9%80%89%E8%82%A1%E4%BD%93%E7%B3%BB.pdf
+
 import numpy as np
 from numpy import log
 from scipy.stats import rankdata
@@ -1231,11 +1233,11 @@ class Alphas191(Alphas):
         return ((Corr(Mean(self.volume,20), self.low, 5) + ((self.high + self.low) / 2)) - self.close)
     
 if __name__ == '__main__':
-    year = '2019'
-    list_assets,df_asserts = get_hs300_stocks(f'{year}-01-01')
+    year = '2023'
+    list_assets,df_asserts = get_hs300_stocks(f'{year}-05-04')
 
     ################ 计算所有 #################    
-    Alphas191.generate_alphas(year, list_assets,"sh000300")
+    Alphas191.generate_alphas(year, list_assets,"000300.SH")
 
     ################ 计算单个 #################
     # ret = Alphas191.generate_alpha_single('alpha170', year, list_assets, "sh000300", True)
