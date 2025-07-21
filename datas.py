@@ -300,6 +300,6 @@ def download_index_data(code, must_update=False):
     stock_zh_index_daily_df.to_csv(f'{path}/{code}.csv')
 
 if __name__ == '__main__':
-    #download_index_data("000300.SH", True)
-    #download_all_date_data("bfq")
-    download_date_data('600000.SH', 'bfq', True)
+    download_index_data("000300.SH", True)
+    download_all_date_data("bfq")
+    #download_date_data('600000.SH', 'bfq', True)
